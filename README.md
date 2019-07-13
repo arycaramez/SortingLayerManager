@@ -6,6 +6,6 @@ Unity Version: 2019.3.0a7.
 
 Asset Anima2D Version: 1.1.7 2019-05-23.
 
-Operation:
+# Operation:
 
 The script is applied to the child object of the character object, the name of that object is "mesh", it contains the sprites of the character that make up the body of it. The script is responsible for organizing in which layer each part of the character will belong and the Sorting Layer that the whole character will belong to, each part of the character is separated by its type, arm, leg ... All this is executed through button that can be pressed in the "Inspector".
