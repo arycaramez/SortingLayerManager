@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae0543fe805424df99fe08ce744cbe49, type: 3}
+  m_Name: demon_ball_start_pose
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: bones/b_head
+    localPosition: {x: -0.029125124, y: -1.0335042, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/b_head/b_eye
+    localPosition: {x: 1.043732, y: -0.024850965, z: 0}
+    localRotation: {x: -0, y: -0, z: -0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/b_head/wing_L_0
+    localPosition: {x: 0.98242205, y: -0.6428804, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.7253417, w: 0.68838906}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/b_head/wing_L_0/wing_L_1
+    localPosition: {x: 1.0368422, y: 1.1270998, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.50302887, w: 0.8642696}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/b_head/wing_R_0
+    localPosition: {x: 0.98242205, y: 0.6428804, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7253443, w: 0.68838626}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: bones/b_head/wing_R_0/wing_R_1
+    localPosition: {x: 1.0368422, y: -1.1271, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.50302756, w: 0.8642704}
+    localScale: {x: 1, y: 1, z: 1}
