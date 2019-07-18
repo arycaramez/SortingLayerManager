@@ -69,8 +69,11 @@
      <Compile Include="Assets\Anima2D\Scripts\SpriteMesh.cs" />
      <Compile Include="Assets\Anima2D\Scripts\SpriteMeshAnimation.cs" />
      <Compile Include="Assets\Anima2D\Scripts\SpriteMeshInstance.cs" />
-     <Compile Include="Assets\SortingLayerCharManager\scripts\PrimaryScript\SortingLayerCharacterManager.cs" />
+     <Compile Include="Assets\SortingLayerCharacterManager\scripts\CompatibilityForAnima2D\PartControl_anima2D.cs" />
+     <Compile Include="Assets\SortingLayerCharacterManager\scripts\PrimaryScripts\CharPartsControl.cs" />
+     <Compile Include="Assets\SortingLayerCharacterManager\scripts\PrimaryScripts\PartControl.cs" />
      <None Include="Assets\Anima2D\Readme.txt" />
+     <None Include="Assets\SortingLayerCharacterManager\ReadMe.txt" />
      <None Include="Assets\Anima2D\Licenses.txt" />
      <None Include="Assets\Anima2D\Version.txt" />
  <Reference Include="Unity.Timeline.Editor">

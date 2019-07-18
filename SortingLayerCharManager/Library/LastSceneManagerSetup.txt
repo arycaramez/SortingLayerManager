@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/SortingLayerCharManager/examples/scene_test.unity
+- path: Assets/SortingLayerCharacterManager/examples/scene_test.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

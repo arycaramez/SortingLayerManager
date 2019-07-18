@@ -189,7 +189,9 @@
      <Compile Include="Assets\Anima2D\Scripts\Editor\VertexManipulator\VertexManipulator.cs" />
      <Compile Include="Assets\Anima2D\Scripts\Editor\WeightEditor.cs" />
      <Compile Include="Assets\Anima2D\Scripts\Editor\WindowEditorTool.cs" />
-     <Compile Include="Assets\SortingLayerCharManager\scripts\PrimaryScript\Editor\SortingLayerCharacterManagerEditor.cs" />
+     <Compile Include="Assets\SortingLayerCharacterManager\scripts\PrimaryScripts\Editor\CharPartsControlEditor.cs" />
+     <Compile Include="Assets\SortingLayerCharacterManager\scripts\PrimaryScripts\Editor\PartControlEditor.cs" />
+     <Compile Include="Assets\SortingLayerCharacterManager\scripts\PrimaryScripts\Editor\PartControlEditor_anima2D.cs" />
  <Reference Include="UnityEditor.TestRunner">
  <HintPath>C:/dev_unity_projects/SortingLayerCharManager/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
  </Reference>
