@@ -212,7 +212,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 981179104}
-  - component: {fileID: 981179106}
   - component: {fileID: 981179105}
   m_Layer: 0
   m_Name: demon_ball_eye
@@ -249,7 +248,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -273,7 +271,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311775739
   m_SortingLayer: 2
-  m_SortingOrder: -3
+  m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: 593088603c2f5884287fae8994348d71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -285,22 +283,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &981179106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981179103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac04215990b83c640a081173d97bb150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charPartsControl: {fileID: 1477025173}
-  currentTypeID: 1
-  meshInfo:
-    obj: {fileID: 981179103}
 --- !u!1 &1425063350
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1425063352}
+  - component: {fileID: 1425063353}
   - component: {fileID: 1425063351}
   m_Layer: 0
   m_Name: demon_ball_example
@@ -318,22 +301,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1425063351
-MonoBehaviour:
+--- !u!210 &1425063351
+SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425063350}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac04215990b83c640a081173d97bb150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charPartsControl: {fileID: 1477025173}
-  currentTypeID: 0
-  meshInfo:
-    obj: {fileID: 1425063350}
+  m_SortingLayerID: 311775739
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!4 &1425063352
 Transform:
   m_ObjectHideFlags: 0
@@ -349,6 +327,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425063353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425063350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f5fad1326383d246ad8c52be9c82b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalSortingLayerID: 2
+  layerBase: -100
+  meshTarget:
+  - {fileID: 1477025174}
+  collapseSlTagList: 0
+  slTagList:
+  - Eye
+  - Body
+  - Eye Background
+  - Wings
+  collapseMeshObjList: 0
+  meshObjList:
+  - soTag: Body
+    meshObj: {fileID: 1509619867}
+  - soTag: Eye
+    meshObj: {fileID: 981179103}
+  - soTag: Eye Background
+    meshObj: {fileID: 1985215121}
+  - soTag: Wings
+    meshObj: {fileID: 2090924366}
+  - soTag: Wings
+    meshObj: {fileID: 1932054249}
 --- !u!1 &1476048305
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +436,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1477025174}
-  - component: {fileID: 1477025173}
   m_Layer: 0
   m_Name: mesh
   m_TagString: Untagged
@@ -432,29 +443,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1477025173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477025172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f5fad1326383d246ad8c52be9c82b2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  globalSortingLayerID: 2
-  layerBase: 0
-  editTypeParts:
-  - tagPart: Body
-    layer: -2
-  - tagPart: Eye
-    layer: -3
-  - tagPart: Eye BG
-    layer: -4
-  - tagPart: Wing
-    layer: -5
 --- !u!4 &1477025174
 Transform:
   m_ObjectHideFlags: 0
@@ -479,7 +467,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509619868}
-  - component: {fileID: 1509619870}
   - component: {fileID: 1509619869}
   m_Layer: 0
   m_Name: demon_ball_body
@@ -520,7 +507,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -544,7 +530,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311775739
   m_SortingLayer: 2
-  m_SortingOrder: -2
+  m_SortingOrder: -101
   m_Sprite: {fileID: 21300000, guid: f506a1321f44ee44da751c3174215938, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -556,22 +542,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1509619870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509619867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac04215990b83c640a081173d97bb150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charPartsControl: {fileID: 1477025173}
-  currentTypeID: 0
-  meshInfo:
-    obj: {fileID: 1509619867}
 --- !u!1001 &1635531085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -579,6 +549,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4669998895400687879, guid: afc76d1ce571c724e805b1b6d437a259,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4669998896074742483, guid: afc76d1ce571c724e805b1b6d437a259,
         type: 3}
       propertyPath: m_Name
@@ -689,11 +664,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4669998895400687879, guid: afc76d1ce571c724e805b1b6d437a259,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afc76d1ce571c724e805b1b6d437a259, type: 3}
 --- !u!1 &1932054249
@@ -705,7 +675,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1932054250}
-  - component: {fileID: 1932054252}
   - component: {fileID: 1932054251}
   m_Layer: 0
   m_Name: demon_ball_wing_L
@@ -742,7 +711,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -766,7 +734,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311775739
   m_SortingLayer: 2
-  m_SortingOrder: -5
+  m_SortingOrder: -103
   m_Sprite: {fileID: 21300000, guid: 096e831d493ccb64383937626f2efded, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -778,22 +746,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1932054252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932054249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac04215990b83c640a081173d97bb150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charPartsControl: {fileID: 1477025173}
-  currentTypeID: 3
-  meshInfo:
-    obj: {fileID: 1932054249}
 --- !u!1 &1985215121
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,7 +755,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1985215122}
-  - component: {fileID: 1985215124}
   - component: {fileID: 1985215123}
   m_Layer: 0
   m_Name: demon_ball_eye_bg
@@ -840,7 +791,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -864,7 +814,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311775739
   m_SortingLayer: 2
-  m_SortingOrder: -4
+  m_SortingOrder: -102
   m_Sprite: {fileID: 21300000, guid: 27e2f6e26ec1aba49b2dbc6f432f4a29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -876,22 +826,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1985215124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985215121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac04215990b83c640a081173d97bb150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charPartsControl: {fileID: 1477025173}
-  currentTypeID: 2
-  meshInfo:
-    obj: {fileID: 1985215121}
 --- !u!1 &2029785980
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +886,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2090924367}
-  - component: {fileID: 2090924369}
   - component: {fileID: 2090924368}
   m_Layer: 0
   m_Name: demon_ball_wing_R
@@ -989,7 +922,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1013,7 +945,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311775739
   m_SortingLayer: 2
-  m_SortingOrder: -5
+  m_SortingOrder: -103
   m_Sprite: {fileID: 21300000, guid: 2a11af3d89592e245ae2c1f6a6c3e7a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1025,19 +957,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2090924369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2090924366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac04215990b83c640a081173d97bb150, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charPartsControl: {fileID: 1477025173}
-  currentTypeID: 3
-  meshInfo:
-    obj: {fileID: 2090924366}

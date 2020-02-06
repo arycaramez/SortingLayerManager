@@ -7,76 +7,174 @@ public class CharPartsControl : MonoBehaviour
 {
     [HideInInspector] public int globalSortingLayerID = 0;
     [HideInInspector] public int layerBase = 0;
-    [HideInInspector] public List<SortingLayerInformation> editTypeParts = new List<SortingLayerInformation>();
+    //
+    [HideInInspector] public List<Transform> meshTarget = new List<Transform>();
+    //
+    [HideInInspector] public bool collapseSlTagList = false;
+    [HideInInspector] public List<string> slTagList = new List<string>();
+    //
+    [HideInInspector] public bool collapseMeshObjList = false;
+    [HideInInspector] public List<MeshObjectElement> meshObjList = new List<MeshObjectElement>();
     
-    private PartControl[] GetList() {
-        return this.gameObject.GetComponentsInChildren<PartControl>();
-    }
-
-    public void UpdateCharMeshLayerSystem()
+    public void ApplyList()
     {
-        for (int i = 0; i < editTypeParts.Count; i++)
+        for (int i = 0; i < meshObjList.Count; i++)
         {
-            CheckType(editTypeParts[i]);
+            SetSortingLayer(meshObjList[i]);
         }
     }
-
-    private void CheckType(SortingLayerInformation sInfo)
+    //
+    public void UpdateList()
     {
-        PartControl[] list = GetList();
-        for (int i = 0; i < list.Length; i++)
-        {
-            for (int j = 0; j < editTypeParts.Count; j++)
+        List<MeshObjectElement> saveMeshObjList = new List<MeshObjectElement>();
+        foreach (MeshObjectElement moe in meshObjList) saveMeshObjList.Add(moe);
+        meshObjList.Clear();
+
+        foreach (Transform t in meshTarget){
+            GameObject[] arrayMeshTarget = FindRenderer(t.gameObject);
+            foreach (GameObject a in arrayMeshTarget)
             {
-                if (list[i].GetTagPart() == editTypeParts[j].tagPart)
+                if(a) meshObjList.Add(new MeshObjectElement(a));
+            }
+        }
+
+        for (int j = 0; j < saveMeshObjList.Count; j++)
+        {
+            for (int i = 0; i < meshObjList.Count; i++)
+            {
+                if (GameObject.Equals(meshObjList[i].meshObj,saveMeshObjList[j].meshObj))
                 {
-                    list[i].SetMeshInfo(editTypeParts[j], globalSortingLayerID, layerBase);
+                    meshObjList[i].soTag = saveMeshObjList[j].soTag;
+                }            
+            }
+        }
+    }
+    //
+    private GameObject[] FindRenderer(GameObject gObj) {
+        List<GameObject> selected = new List<GameObject>();
+        
+        //para renderizadores simples, menos os que estão vinculados ao sistema de particulas. 
+        Renderer[] array1 = gObj.GetComponentsInChildren<Renderer>();
+        foreach (Renderer a in array1)
+        {
+            if (!selected.Contains(a.gameObject) && !a.GetComponent<ParticleSystem>())
+            {
+                selected.Add(a.gameObject);
+            }
+        }
+        //para sprites e animações.
+        SpriteRenderer[] array2 = gObj.GetComponentsInChildren<SpriteRenderer>();
+        foreach (SpriteRenderer a in array2)
+        {
+            if (!selected.Contains(a.gameObject))
+            {
+                selected.Add(a.gameObject);
+            }
+        }
+        ParticleSystem[] array3 = gObj.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem a in array3)
+        {
+            if (!selected.Contains(a.gameObject))
+            {
+                selected.Add(a.gameObject);
+            }
+        }
+        return selected.ToArray();
+    }
+    //
+    /*public MeshObjectElement GetMeshObjElementBySoTag(string soTag)
+    {
+        foreach (MeshObjectElement moe in meshObjList)
+        {
+            if (moe.soTag == soTag) return moe;
+        }
+        return null;
+    }*/
+    //
+    public List<string> GetSortingLayerNames()
+    {
+        List<string> layerNames = new List<string>();
+        for (int i = 0; i < SortingLayer.layers.Length; i++)
+        {
+            string n = SortingLayer.layers[i].name;
+            layerNames.Add(n);
+        }
+        return layerNames;
+    }
+    //
+    public void SetSortingLayer(MeshObjectElement meshElement)
+    {
+        if (meshElement != null && meshElement.meshObj != null)
+        {
+            Component element = element = meshElement.meshObj.GetComponent<Renderer>();
+
+            int tagId = GetIdSubTagLayers(meshElement.soTag);
+
+            if (tagId != -1 && tagId < slTagList.Count && slTagList.Count > 0 )
+            {
+                int newOrderID = GetSortingOrderByID(-tagId);
+                string newName = SortingLayer.layers[globalSortingLayerID].name;
+                if (element is Renderer)
+                {
+                    Renderer r = (Renderer)element;
+                    r.sortingLayerID = SortingLayer.NameToID(newName);
+                    r.sortingLayerName = newName;
+                    r.sortingOrder = newOrderID;
+                }
+                else if (element is SpriteRenderer)
+                {
+                    SpriteRenderer r = (SpriteRenderer)element;
+                    r.sortingLayerID = SortingLayer.NameToID(newName);
+                    r.sortingLayerName = newName;
+                    r.sortingOrder = newOrderID;
                 }
             }
         }
     }
-
-    public string[] GetSortingLaryer()
+    //
+    public int GetSortingOrderByID(int tagID)
     {
-        List<string> list = new List<string>();
-        for (int i = 0; i < SortingLayer.layers.Length; i++)
-        {
-            list.Add(SortingLayer.layers[i].name);
-        }
-        return list.ToArray();
+        return layerBase + tagID;
     }
-
-    public void UpdateAllAutoFindMesh()
+    //
+    public int GetIdSubTagLayers(string tagRef)
     {
-        PartControl[] list = GetList();
-        for (int i = 0; i < list.Length; i++)
+        for (int i=0;i< slTagList.Count;i++)
         {
-            if (list[i]) list[i].AutoFindObject();
+            if (slTagList[i] == tagRef) return i;
         }
-    }
 
-    public void AddRefThisInPartControlChildren()
-    {
-        PartControl[] list = GetList();
-        for (int i = 0; i < list.Length; i++)
-        {
-            list[i].charPartsControl = this;
-        }
+        if (slTagList.Count > 0) return 0; 
+
+        return -1;
     }
 }
 
 [System.Serializable]
-public class SortingLayerInformation
+public class MeshObjectElement
 {
-    public string tagPart;
-    public int layer;
-    public SortingLayerInformation()
+    public string soTag;
+    public GameObject meshObj;
+    
+    public MeshObjectElement(GameObject meshObj)
     {
-        this.tagPart = ""; this.layer = 0;
+        this.meshObj = meshObj;
     }
-    public SortingLayerInformation(string tagPart, int layer)
+
+    public void SetSortingOrderID(int soID)
     {
-        this.tagPart = tagPart;
-        this.layer = layer;
+        if (meshObj) {
+            object renderObj = meshObj.GetComponent<Renderer>();
+            if (renderObj is Renderer)
+            {
+                Renderer rend = (Renderer)renderObj;
+                rend.sortingOrder = soID;
+            }
+            else if (renderObj is SpriteRenderer)
+            {
+                SpriteRenderer rend = (SpriteRenderer)renderObj;
+                rend.sortingOrder = soID;
+            }
+        }
     }
 }
