@@ -4,8 +4,9 @@ It's a simple asset, it lets you manage the layers belonging to parts of a 2D ch
 
 Author: Ary Guilherme Pires Caramez, portfolio: https://www.artstation.com/arycaramez.
 
-Unity Version: 2019.2.19f1
+Unity Version: 2020.02.06.0
 
 Asset Anima2D Version: 1.1.7 2019-05-23.
+(Work without Anima2D Asset)
 
 Obs: I will make a video tutorial.
