@@ -1,4 +1,4 @@
-# "Sorting Layer Character Manager" para Unity
+# "Sorting Layer Manager" para Unity
 
 É um asset que permite gerenciar as camadas pertencentes às partes de um personagem 2D. Ou seja, é um gerenciador de Sorting Layers para personagens 2D. Percebi que assim ficaria mais fácil para trabalhar com sprites 2D, neste asset você pode encontrar uma versão do script compatível com o Asset "Anima 2D" usado para criar rig para personagens 2D.
 
