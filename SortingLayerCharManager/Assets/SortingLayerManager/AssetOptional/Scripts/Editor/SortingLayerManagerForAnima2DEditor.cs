@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using UnityEditorInternal;
+using UnityEngine.Rendering;
 using System.Collections.Generic;
 //Author: Ary Guilherme Pires Caramez. https://www.artstation.com/arycaramez
-[CustomEditor(typeof(CharPartsControl))]
-public class CharPartsControlEditor : Editor
+[CustomEditor(typeof(SortingLayerManagerForAnima2D))]
+public class SortingLayerManagerForAnima2DEditor : Editor
 {
     
-    private CharPartsControl MyScript() { return (CharPartsControl)target; }
+    private SortingLayerManagerForAnima2D MyScript() { return (SortingLayerManagerForAnima2D)target; }
     private ReorderableList rl_meshObjList;
     private ReorderableList rl_subTagLayers;
     private ReorderableList rl_meshTarget;
 
     public void OnEnable() {
-        CharPartsControl myScript = MyScript();
+        SortingLayerManagerForAnima2D myScript = MyScript();
         //cria a lista reordenavel
         rl_meshObjList = 
             new ReorderableList(
@@ -100,7 +101,7 @@ public class CharPartsControlEditor : Editor
 
     public override void OnInspectorGUI()
     {
-        CharPartsControl myScript = MyScript();
+        SortingLayerManagerForAnima2D myScript = MyScript();
 
         DrawDefaultInspector();
 

@@ -273,7 +273,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311775739
   m_SortingLayer: 2
-  m_SortingOrder: -100
+  m_SortingOrder: -101
   m_Sprite: {fileID: 21300000, guid: 593088603c2f5884287fae8994348d71, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -367,8 +367,8 @@ MonoBehaviour:
   - {fileID: 1477025174}
   collapseSlTagList: 0
   slTagList:
-  - Eye
   - Body
+  - Eye
   - Eye Background
   - Wings
   collapseMeshObjList: 0
@@ -553,7 +553,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 311775739
   m_SortingLayer: 2
-  m_SortingOrder: -101
+  m_SortingOrder: -100
   m_Sprite: {fileID: 21300000, guid: f506a1321f44ee44da751c3174215938, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -576,6 +576,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669998895525586253, guid: afc76d1ce571c724e805b1b6d437a259,
+        type: 3}
+      propertyPath: m_Text
+      value: Sorting Layer Manager
       objectReference: {fileID: 0}
     - target: {fileID: 4669998896074742483, guid: afc76d1ce571c724e805b1b6d437a259,
         type: 3}
@@ -862,7 +867,7 @@ GameObject:
   - component: {fileID: 2029785981}
   - component: {fileID: 2029785982}
   m_Layer: 0
-  m_Name: NotAnima
+  m_Name: NoAnima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
