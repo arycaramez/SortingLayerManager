@@ -1,12 +1,15 @@
-# Sorting Layer Character Manager for Unity 2D (v2020.02.06.0)
+# "Sorting Layer Character Manager" para Unity
 
-It's a simple asset, it lets you manage the layers belonging to parts of a 2D character. That is, it is a Sorting Layers manager for 2D characters. I realized that this would make it easier for me to work with the "Anima2D" asset, having to clean up layer by layer of a character wasted a lot of time, so I ended up making this tool simple and useful. I will update the pertinent information to this asset over time, I hope I have helped. 
+É um asset que permite gerenciar as camadas pertencentes às partes de um personagem 2D. Ou seja, é um gerenciador de Sorting Layers para personagens 2D. Percebi que assim ficaria mais fácil para trabalhar com sprites 2D, neste asset você pode encontrar uma versão do script compatível com o Asset "Anima 2D" usado para criar rig para personagens 2D.
 
-Author: Ary Guilherme Pires Caramez, portfolio: https://www.artstation.com/arycaramez.
+Esse asset cria uma lista de tags que você pode usar para referenciar a um grupo de sprites, com isso você pode atribuir uma hierarquia de exibição dos sprites de um personagem ou cenário 2D de forma rápida.
 
 Unity Version: 2020.02.06.0
 
 Asset Anima2D Version: 1.1.7 2019-05-23.
 (Work without Anima2D Asset)
 
-Obs: I will make a video tutorial.
+> Modo de uso:
+- ??? (irei colocar o passo a passo em breve).
+
+##### Autor: Ary Guilherme Pires Caramez, portfólio: https://www.artstation.com/arycaramez
