@@ -285,26 +285,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1237250651 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4669998896074742483, guid: afc76d1ce571c724e805b1b6d437a259,
-    type: 3}
-  m_PrefabInstance: {fileID: 1635531085}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1237250652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237250651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c70d4b7410453d4b92c9f15c8edcbfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  path: C:\Users\AryGuilherme\Desktop\images
-  size: 1
 --- !u!1 &1425063350
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,16 +552,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4669998895400687879, guid: afc76d1ce571c724e805b1b6d437a259,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4669998895525586253, guid: afc76d1ce571c724e805b1b6d437a259,
-        type: 3}
-      propertyPath: m_Text
-      value: Sorting Layer Manager
-      objectReference: {fileID: 0}
     - target: {fileID: 4669998896074742483, guid: afc76d1ce571c724e805b1b6d437a259,
         type: 3}
       propertyPath: m_Name

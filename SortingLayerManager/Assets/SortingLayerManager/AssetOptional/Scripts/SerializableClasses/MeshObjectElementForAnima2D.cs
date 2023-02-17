@@ -2,7 +2,7 @@
 using Anima2D;
 using SortingLayerManager;
 
-namespace SortingLayerManager
+namespace SortingLayerManager.Anima2D
 {
     [System.Serializable]
     public class MeshObjectElementForAnima2D : IMeshObjectElement

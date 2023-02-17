@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Author: Ary Guilherme Pires Caramez. link: https://github.com/arycaramez
 
+//Author: Ary Guilherme Pires Caramez. link: https://github.com/arycaramez
 namespace SortingLayerManager
 {
     [System.Serializable]
-    public class SortingLayerManager : MonoBehaviour, ISortingLayerManager
+    public class SortingLayerManager : AbstractSortingLayerManager, ISortingLayerManager
     {
-        [HideInInspector] public int globalSortingLayerID = 0;
+        /*[HideInInspector] public int globalSortingLayerID = 0;
         [HideInInspector] public int layerBase = 0;
         //
         [HideInInspector] public List<Transform> meshTarget = new List<Transform>();
@@ -16,18 +16,18 @@ namespace SortingLayerManager
         [HideInInspector] public bool collapseSlTagList = false;
         [HideInInspector] public List<string> slTagList = new List<string>();
         //
-        [HideInInspector] public bool collapseMeshObjList = false;
+        [HideInInspector] public bool collapseMeshObjList = false;*/
         [HideInInspector] public List<MeshObjectElement> meshObjList = new List<MeshObjectElement>();
 
-        public void ApplyList()
+        public override void ApplyList()
         {
             for (int i = 0; i < meshObjList.Count; i++)
             {
                 SetSortingLayer(meshObjList[i]);
             }
         }
-        //
-        public void UpdateList()
+        
+        public override void UpdateList()
         {
             List<MeshObjectElement> saveMeshObjList = new List<MeshObjectElement>();
             foreach (MeshObjectElement moe in meshObjList) saveMeshObjList.Add(moe);
@@ -53,8 +53,8 @@ namespace SortingLayerManager
                 }
             }
         }
-        //
-        public GameObject[] FindRenderer(GameObject gObj)
+
+        /*public override GameObject[] FindRenderer(GameObject gObj)
         {
             List<GameObject> selected = new List<GameObject>();
 
@@ -85,9 +85,9 @@ namespace SortingLayerManager
                 }
             }
             return selected.ToArray();
-        }
+        }*/
 
-        public List<string> GetSortingLayerNames()
+        /*public override List<string> GetSortingLayerNames()
         {
             List<string> layerNames = new List<string>();
             for (int i = 0; i < SortingLayer.layers.Length; i++)
@@ -96,9 +96,9 @@ namespace SortingLayerManager
                 layerNames.Add(n);
             }
             return layerNames;
-        }
-        
-        public void SetSortingLayer(IMeshObjectElement meshElement)
+        }*/
+
+        public override void SetSortingLayer(IMeshObjectElement meshElement)
         {
             if (meshElement is MeshObjectElement _meshElement) {
                 if (meshElement != null && _meshElement.meshObj != null)
@@ -129,13 +129,13 @@ namespace SortingLayerManager
                 }
             }
         }
-        
-        public int GetSortingOrderByID(int tagID)
+
+        /*public override int GetSortingOrderByID(int tagID)
         {
             return layerBase + tagID;
-        }
-        
-        public int GetIdSubTagLayers(string tagRef)
+        }*/
+
+        /*public override int GetIdSubTagLayers(string tagRef)
         {
             for (int i = 0; i < slTagList.Count; i++)
             {
@@ -145,6 +145,6 @@ namespace SortingLayerManager
             if (slTagList.Count > 0) return 0;
 
             return -1;
-        }
+        }*/
     }
 }
